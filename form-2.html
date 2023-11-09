@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900;1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Purefit</title>
+</head>
+<body>
+    <div class="page-2">
+        <div class="container">
+    <section class="form-2 text-center  pt-5 m-auto" id="form-2">
+        <div class="container">
+    <form method="post" class="" action="https://script.google.com/macros/s/AKfycbydQeyDwyUWhtAzZk5lokR0OOBhPRCx6yBjdp_4EN4ZPLV2yKfAWLWLSyUUfYMLoKtF/exec"
+    name="form-content">
+    <img class="img-fluid mb-4" src="images/pureFit-logo.png" width="100px" alt="">
+        <div class="form-group text-start">
+          <label for="name"> <i class="fa-solid fa-user"></i>Name / الاسم</label>
+          <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name"required>
+        </div>
+        <div class="form-group text-start">
+          <label for="age"><i class="fa-solid fa-calendar-days"></i> Age / السن</label>
+          <input type="text" name="age" class="form-control" id="age" placeholder="Age"required>
+        </div>
+        <div class="form-group text-start">
+            <label for="address"><i class="fa-solid fa-location-dot"></i>Address / العنوان</label>
+            <input type="text" name="address" class="form-control" id="address" placeholder="Enter your address"required>
+          </div>
+          <div class="form-group text-start">
+            <label for="tel"><i class="fa-solid fa-phone"></i>Phone number / رقم الهاتف</label>
+            <input type="tel" name="phone"class="form-control" id="tel" placeholder="05X XXX XXXX" pattern="^05\d{8}$" required>
+            <small id="emailHelp" class="form-text  text-white-50">The number should start with 05 / يجب ان يبدا الرقم ب05</small>
+          </div>
+          <div class="form-group text-start">
+            <label for="height"><i class="fa-solid fa-ruler-vertical"></i> Height / الطول</label>
+            <input type="number" name="height" class="form-control" id="heigh" placeholder="Cm"required>
+          </div>
+          <div class="form-group text-start">
+            <label for="weight"><i class="fa-solid fa-weight-scale"></i> Weight / الوزن</label>
+            <input type="number" name="weight" class="form-control" id="weight" placeholder="Kg"required>
+          </div>
+          <div class="form-group text-start">
+            <label for="diet"><i class="fa-solid fa-utensils"></i> Diet plan / نظامك الغذائي</label>
+            <input type="text" name="diet" class="form-control" id="diet"  placeholder="Enter your diet plan "required>
+          </div>
+          <div class="form-group text-start">
+            <label for="work"><i class="fa-solid fa-briefcase"></i> Your work routien / طبيعه عملك</label>
+            <input type="text" name="work" class="form-control" id="work" placeholder="Active ,lethargic ...."required>
+          </div>
+          <div class="form-group text-start">
+            <label for="disease"> <i class="fa-solid fa-disease"></i>Chronic or ginatic diseases / الامراض المزمنه او الوراثية</label>
+            <input type="text" class="form-control" name="disease" id="disease"  placeholder="Chronic or ginatic diseases you suffer from (diabets hypertention)"required>
+          </div>
+          <div class="form-group text-start">
+            <label for="pregnancy"><i class="fa-solid fa-baby"></i> Pregnancy and breastfeeding / الحمل او الرضاعة</label>
+            <input type="text" name="pregnancy" class="form-control" id="pregnancy" placeholder="Yes or No"required>
+          </div>
+          <div class="form-groub text-start">
+            <label for="notes"><i class="fa-solid fa-comment"></i> Add your notes here..../ اضف ملاحظاتك</label>
+            <textarea name="notes" id="" cols="10" rows="7" placeholder="Write your notes here ...."></textarea>
+          </div>
+        <button type="submit" value="submit" id="submit" class="btn btn-primary fs-3 px-5">Submit</button>
+       
+      </form>
+    </div>
+    </section>
+   
+</div>
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbydQeyDwyUWhtAzZk5lokR0OOBhPRCx6yBjdp_4EN4ZPLV2yKfAWLWLSyUUfYMLoKtF/exec';
+const form = document.forms['form-content'];
+const submitButton = document.getElementById('submit'); // Get the submit button
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  // Disable the submit button to prevent multiple submissions
+  submitButton.setAttribute('disabled', 'true');
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+      alert("Thank you! your form is submitted successfully.");
+      // Re-enable the submit button after a successful submission
+      submitButton.removeAttribute('disabled');
+    })
+    .then(() => {
+      window.location.reload();
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      // Re-enable the submit button in case of an error
+      submitButton.removeAttribute('disabled');
+    });
+});
+
+  </script>
+</body>
+</html>

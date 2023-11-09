@@ -1,0 +1,96 @@
+html, body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: 'crossorigin', sans-serif;
+    position: relative;
+}
+.page-1{
+    background-image: url(../images/snapedit_1699213161765.png); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 4rem;
+    min-height:100vh ;
+}
+.page-2{
+    background-image: url(../images/000.webp);
+    background-size: cover;
+    padding-bottom: 4rem;
+}
+body::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(0, 0, 0, 30%); */
+}
+form {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem 2rem;
+    box-shadow: 0 5px 10px rgba(1, 1, 1, 70%);
+    background-color: white;
+}
+form input[type="text"], form input[type="number"], form input[type="tel"]{
+    background-color: transparent;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #01e6ad ;
+    margin-bottom: 15px;
+    color: black;
+}
+form input[type="text"]:focus, form input[type="tel"]:focus, form input[type="number"]:focus{ 
+   box-shadow: none;
+   background-color: transparent;
+   color: black;
+   
+}
+form label{
+    color: black;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: normal;
+}
+.page-1 form label span{
+    letter-spacing: 2px;
+}
+form::placeholder{
+    background-color: transparent;
+    color: black;
+    box-shadow: none;
+}
+form label i{
+    margin-right: 10px;
+    color: #65e6c6;
+}
+ textarea{
+    height: 50px;
+    width: 530px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 3px solid #01e6ad;
+    margin-bottom: 10px;
+    color: black;
+ }
+.page-1 form::placeholder{
+    color: aquamarine;
+}
+.page-1 .title{
+    text-align: center;
+    color: rgb(1,230,173);
+    color: linear-gradient(270deg, rgba(1,230,173,1) 0%, rgba(0,255,230,1) 4%, rgba(86,134,143,1) 100%);
+}
+ form button{
+    background-color: #01e6ad;
+    border: none;
+    padding: 10px 2rem;
+    background: rgb(1,230,173);
+    background: linear-gradient(270deg, rgba(1,230,173,1) 0%, rgba(0,255,230,1) 4%, rgba(86,134,143,1) 100%);
+    letter-spacing: 3px;
+}
+.page-1 form button:hover{
+    color: white;
+    background-color: #01e6ad;
+}
